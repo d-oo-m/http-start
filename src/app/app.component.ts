@@ -37,6 +37,12 @@ export class AppComponent {
       (error) => console.log(error)
     );
   }
+  onGet() {
+    this.serverService.getServers().subscribe(
+      (servers: any[]) => this.servers = servers,
+      (error) => console.log(error)
+    );
+  }
 
   private generateId() {
     return Math.round(Math.random() * 10000);
